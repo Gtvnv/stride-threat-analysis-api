@@ -1,9 +1,27 @@
-# STRIDE Threat Analysis API
+<div align="center">
 
-API em Python e FastAPI que recebe a imagem de um diagrama de arquitetura, envia a imagem a um modelo com visão hospedado no Azure OpenAI e devolve uma análise de ameaças baseada na metodologia STRIDE.
+# 🛡️ STRIDE Threat Analysis API
+
+**Envie o desenho da arquitetura. Receba um mapa de ameaças STRIDE.**
+
+API em Python e FastAPI que lê o diagrama de uma aplicação com um modelo de visão do Azure OpenAI e devolve uma análise de ameaças estruturada e validada.
+
+[![CI](https://github.com/Gtvnv/stride-threat-analysis-api/actions/workflows/ci.yml/badge.svg)](https://github.com/Gtvnv/stride-threat-analysis-api/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Azure OpenAI](https://img.shields.io/badge/Azure%20OpenAI-0078D4?logo=microsoftazure&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-v2-E92063?logo=pydantic&logoColor=white)
+[![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green.svg)](LICENSE)
+
+[Objetivo](#objetivo) · [Arquitetura](#arquitetura) · [Instalação](#instalação) · [Execução](#execução) · [Exemplos](#exemplos-de-requisição-e-resposta) · [Limitações](#limitações)
+
+</div>
+
+---
 
 ## Aviso de revisão humana e uso ético e defensivo
 
+> [!WARNING]
 > **Aviso de revisão humana:** Esta análise foi gerada por um modelo de linguagem e pode conter erros ou omissões. Ela exige revisão humana e deve ser usada apenas de forma ética e defensiva, em sistemas que você possui ou está autorizado a avaliar.
 
 **Uso ético e defensivo.** Este projeto tem finalidade educacional e defensiva. Use a ferramenta somente para analisar sistemas que sejam seus ou para os quais você tenha autorização expressa de avaliação. A saída do modelo é tratada como dado não confiável e deve ser revisada por uma pessoa antes de qualquer decisão. Cada resposta da API traz esse aviso no campo `disclaimer`, inserido pela própria API e nunca copiado da saída do modelo.
@@ -12,7 +30,28 @@ API em Python e FastAPI que recebe a imagem de um diagrama de arquitetura, envia
 
 Ajudar analistas de segurança e times de desenvolvimento a obter um primeiro levantamento de ameaças a partir de um diagrama de arquitetura, sem produzi-lo manualmente. O projeto também serve como material de estudo sobre engenharia de prompt, validação de saída de LLM e desenvolvimento seguro de APIs.
 
-A API expõe:
+### ✨ Destaques
+
+| | Recurso |
+|---|---------|
+| 🖼️ | Aceita diagramas em **PNG ou JPEG**, validados por tipo, tamanho e assinatura do arquivo |
+| 🧠 | **Engenharia de prompt** com papel, few-shot, raciocínio em etapas e defesa contra injeção |
+| ✅ | Saída do modelo **validada por esquema Pydantic** antes de chegar ao cliente |
+| 🔐 | Segredos só em variáveis de ambiente e **nenhuma imagem gravada em disco** |
+| 🧪 | Testes **sem credenciais e sem rede**, incluindo testes baseados em propriedades |
+
+### 🔄 Como funciona
+
+```mermaid
+flowchart LR
+    A[🖼️ Diagrama<br/>PNG ou JPEG] --> B[🔎 Validação<br/>da imagem]
+    B --> C[🧠 Prompt<br/>STRIDE]
+    C --> D[☁️ Azure OpenAI<br/>modelo com visão]
+    D --> E[✅ Validação<br/>do esquema]
+    E --> F[📋 Relatório<br/>de ameaças]
+```
+
+### 🌐 Endpoints
 
 | Endpoint | Descrição |
 |----------|-----------|
@@ -40,16 +79,20 @@ flowchart LR
     R -->|200 Threat_Report ou erro| C
 ```
 
-Pontos principais:
+**Pontos principais**
 
-- A imagem existe apenas em memória. A leitura do upload é interrompida quando o limite de tamanho é ultrapassado, e nenhum byte é gravado em disco.
-- A saída do modelo passa pelo esquema Pydantic antes de chegar ao cliente. Em caso de falha, a API devolve uma mensagem genérica, sem a saída bruta.
-- Os segredos vêm somente de variáveis de ambiente.
-- O texto dos prompts fica em módulos dedicados, fora da camada HTTP.
+- 🧠 A imagem existe apenas em memória. A leitura do upload é interrompida quando o limite de tamanho é ultrapassado, e nenhum byte é gravado em disco.
+- ✅ A saída do modelo passa pelo esquema Pydantic antes de chegar ao cliente. Em caso de falha, a API devolve uma mensagem genérica, sem a saída bruta.
+- 🔑 Os segredos vêm somente de variáveis de ambiente.
+- 📝 O texto dos prompts fica em módulos dedicados, fora da camada HTTP.
 
 Imagem de exemplo de diagrama usada como entrada nos exemplos:
 
+<div align="center">
+
 ![Diagrama de arquitetura de exemplo](images/exemplo-arquitetura.png)
+
+</div>
 
 Detalhes e justificativas em [docs/decisoes-de-arquitetura.md](docs/decisoes-de-arquitetura.md).
 
@@ -57,23 +100,23 @@ Detalhes e justificativas em [docs/decisoes-de-arquitetura.md](docs/decisoes-de-
 
 STRIDE é um modelo de classificação de ameaças. Cada letra corresponde a uma categoria:
 
-| Categoria | Valor na API | Propriedade violada | Descrição curta |
-|-----------|--------------|---------------------|-----------------|
-| **S**poofing | `Spoofing` | Autenticidade | Alguém se passa por outro usuário, serviço ou componente. |
-| **T**ampering | `Tampering` | Integridade | Dados ou código são alterados sem autorização. |
-| **R**epudiation | `Repudiation` | Não repúdio | Uma ação é negada por falta de registro ou prova. |
-| **I**nformation Disclosure | `Information Disclosure` | Confidencialidade | Informação é exposta a quem não deveria acessá-la. |
-| **D**enial of Service | `Denial of Service` | Disponibilidade | O serviço é degradado ou tornado indisponível. |
-| **E**levation of Privilege | `Elevation of Privilege` | Autorização | Alguém obtém permissões além das concedidas. |
+| | Categoria | Valor na API | Propriedade violada | Descrição curta |
+|---|-----------|--------------|---------------------|-----------------|
+| 🎭 | **S**poofing | `Spoofing` | Autenticidade | Alguém se passa por outro usuário, serviço ou componente. |
+| ✏️ | **T**ampering | `Tampering` | Integridade | Dados ou código são alterados sem autorização. |
+| 🙈 | **R**epudiation | `Repudiation` | Não repúdio | Uma ação é negada por falta de registro ou prova. |
+| 🔓 | **I**nformation Disclosure | `Information Disclosure` | Confidencialidade | Informação é exposta a quem não deveria acessá-la. |
+| 💥 | **D**enial of Service | `Denial of Service` | Disponibilidade | O serviço é degradado ou tornado indisponível. |
+| 👑 | **E**levation of Privilege | `Elevation of Privilege` | Autorização | Alguém obtém permissões além das concedidas. |
 
 Cada ameaça do relatório tem `category`, `component`, `description`, `severity` (`Low`, `Medium`, `High` ou `Critical`) e `mitigation`. Os valores de `category` e `severity` são comparados de forma exata e sensível a maiúsculas.
 
 ## Pré-requisitos
 
-- Python 3.12 ou superior.
-- Uma assinatura do Azure com um recurso do Azure OpenAI e um deployment de modelo com capacidade de visão.
-- `git` e `pip`.
-- Para executar os testes, nenhuma credencial é necessária.
+- 🐍 Python 3.12 ou superior.
+- ☁️ Uma assinatura do Azure com um recurso do Azure OpenAI e um deployment de modelo com capacidade de visão.
+- 🧰 `git` e `pip`.
+- 🧪 Para executar os testes, nenhuma credencial é necessária.
 
 ## Configuração do Azure OpenAI
 
@@ -98,7 +141,10 @@ MAX_IMAGE_SIZE_BYTES=5242880
 | `AZURE_OPENAI_API_VERSION` | Versão da API do Azure OpenAI a usar. |
 | `MAX_IMAGE_SIZE_BYTES` | Tamanho máximo da imagem em bytes. Opcional. Padrão de 5 MiB (5242880), máximo de 20971520. |
 
-Nunca versione o arquivo `.env`: ele já está no `.gitignore`. Se endpoint, chave, deployment ou versão estiverem ausentes, ou se `MAX_IMAGE_SIZE_BYTES` for inválido, a API responde 503 apenas quando uma análise é solicitada. `/health` e `/docs` continuam disponíveis. Mais detalhes em [docs/consideracoes-de-seguranca.md](docs/consideracoes-de-seguranca.md).
+> [!IMPORTANT]
+> Nunca versione o arquivo `.env`: ele já está no `.gitignore`.
+
+Se endpoint, chave, deployment ou versão estiverem ausentes, ou se `MAX_IMAGE_SIZE_BYTES` for inválido, a API responde 503 apenas quando uma análise é solicitada. `/health` e `/docs` continuam disponíveis. Mais detalhes em [docs/consideracoes-de-seguranca.md](docs/consideracoes-de-seguranca.md).
 
 ## Instalação
 
@@ -124,8 +170,10 @@ Carregue as variáveis de ambiente do `.env` no seu shell (a aplicação lê o a
 uvicorn app.main:app --reload
 ```
 
-- Documentação interativa: `http://localhost:8000/docs`
-- Verificação de saúde: `http://localhost:8000/health`
+| Recurso | URL |
+|---------|-----|
+| 📖 Documentação interativa | `http://localhost:8000/docs` |
+| 💚 Verificação de saúde | `http://localhost:8000/health` |
 
 Para rodar os testes (sem credenciais e com a rede bloqueada):
 
@@ -139,11 +187,11 @@ A integração contínua roda a mesma suíte no GitHub Actions, sem segredos do 
 
 Arquivos de exemplo:
 
-- Requisição: [examples/requisicao-exemplo.http](examples/requisicao-exemplo.http)
-- Resposta: [examples/resposta-exemplo.json](examples/resposta-exemplo.json)
-- Imagem de entrada: [images/exemplo-arquitetura.png](images/exemplo-arquitetura.png)
+- 📤 Requisição: [examples/requisicao-exemplo.http](examples/requisicao-exemplo.http)
+- 📥 Resposta: [examples/resposta-exemplo.json](examples/resposta-exemplo.json)
+- 🖼️ Imagem de entrada: [images/exemplo-arquitetura.png](images/exemplo-arquitetura.png)
 
-Requisição com `curl`:
+**Requisição com `curl`:**
 
 ```bash
 curl -X POST "http://localhost:8000/api/v1/analyze" \
@@ -151,7 +199,7 @@ curl -X POST "http://localhost:8000/api/v1/analyze" \
   -F "context=Aplicação web com frontend no navegador, API HTTPS e banco de dados relacional."
 ```
 
-Resposta (200), trecho de [examples/resposta-exemplo.json](examples/resposta-exemplo.json):
+**Resposta (200)**, trecho de [examples/resposta-exemplo.json](examples/resposta-exemplo.json):
 
 ```json
 {
@@ -172,14 +220,14 @@ Resposta (200), trecho de [examples/resposta-exemplo.json](examples/resposta-exe
 }
 ```
 
-Erros usam um corpo uniforme, sem eco de segredos nem da saída do modelo:
+**Erros** usam um corpo uniforme, sem eco de segredos nem da saída do modelo:
 
 ```json
 {"error": {"code": "unsupported_media_type", "message": "Tipo de conteúdo não permitido. Use image/png ou image/jpeg."}}
 ```
 
 | Situação | HTTP | `code` |
-|----------|------|--------|
+|----------|:----:|--------|
 | Arquivo ausente ou corpo não multipart | 400 | `file_missing` |
 | Arquivo vazio | 400 | `file_empty` |
 | Imagem maior que o limite | 413 | `file_too_large` |
@@ -193,14 +241,16 @@ Erros usam um corpo uniforme, sem eco de segredos nem da saída do modelo:
 
 O `Prompt_Builder` aplica as seguintes técnicas:
 
-1. **Papel (role prompting):** o modelo age como arquiteto de segurança sênior.
-2. **Definições explícitas:** cada categoria STRIDE é definida, e os seis valores permitidos são listados.
-3. **Few-shot:** de um a três exemplos de ameaça válida, validados nos testes contra o esquema.
-4. **Saída estruturada:** formato JSON descrito campo a campo, com `response_format` do tipo `json_object` e temperatura baixa.
-5. **Raciocínio em etapas:** o modelo identifica componentes, fluxos de dados e fronteiras de confiança antes de listar ameaças.
-6. **Ancoragem na imagem:** só entram componentes visíveis no diagrama.
-7. **Defesa contra injeção de prompt:** texto dentro da imagem e no campo `context` é tratado como dado, e instruções contidas nele são ignoradas.
-8. **Caso vazio:** sem arquitetura identificável, a resposta tem `threats` vazio e um `summary` com o motivo.
+| # | Técnica | O que faz |
+|:-:|---------|-----------|
+| 1 | **Papel (role prompting)** | O modelo age como arquiteto de segurança sênior. |
+| 2 | **Definições explícitas** | Cada categoria STRIDE é definida, e os seis valores permitidos são listados. |
+| 3 | **Few-shot** | De um a três exemplos de ameaça válida, validados nos testes contra o esquema. |
+| 4 | **Saída estruturada** | Formato JSON descrito campo a campo, com `response_format` do tipo `json_object` e temperatura baixa. |
+| 5 | **Raciocínio em etapas** | O modelo identifica componentes, fluxos de dados e fronteiras de confiança antes de listar ameaças. |
+| 6 | **Ancoragem na imagem** | Só entram componentes visíveis no diagrama. |
+| 7 | **Defesa contra injeção de prompt** | Texto dentro da imagem e no campo `context` é tratado como dado, e instruções contidas nele são ignoradas. |
+| 8 | **Caso vazio** | Sem arquitetura identificável, a resposta tem `threats` vazio e um `summary` com o motivo. |
 
 Explicação completa em [docs/engenharia-de-prompt.md](docs/engenharia-de-prompt.md).
 
@@ -224,21 +274,31 @@ tools/                     # utilitário para gerar o diagrama de exemplo
 .env.example  .gitignore  LICENSE  pyproject.toml  README.md
 ```
 
-Documentação adicional:
+**Documentação adicional**
 
-- [docs/decisoes-de-arquitetura.md](docs/decisoes-de-arquitetura.md): decisões de arquitetura e alternativas descartadas.
-- [docs/engenharia-de-prompt.md](docs/engenharia-de-prompt.md): técnicas de prompt aplicadas.
-- [docs/consideracoes-de-seguranca.md](docs/consideracoes-de-seguranca.md): considerações de segurança.
-- [docs/licoes-aprendidas.md](docs/licoes-aprendidas.md): lições aprendidas.
+| Documento | Conteúdo |
+|-----------|----------|
+| [docs/decisoes-de-arquitetura.md](docs/decisoes-de-arquitetura.md) | Decisões de arquitetura e alternativas descartadas. |
+| [docs/engenharia-de-prompt.md](docs/engenharia-de-prompt.md) | Técnicas de prompt aplicadas. |
+| [docs/consideracoes-de-seguranca.md](docs/consideracoes-de-seguranca.md) | Considerações de segurança. |
+| [docs/licoes-aprendidas.md](docs/licoes-aprendidas.md) | Lições aprendidas. |
 
 Licença: MIT. O texto completo está em [LICENSE](LICENSE).
 
 ## Limitações
 
-- A qualidade da análise depende do modelo e da legibilidade do diagrama. O modelo pode errar, omitir ameaças ou inventar detalhes. A revisão humana é obrigatória.
-- Apenas PNG e JPEG são aceitos, com tamanho de 1 byte até o limite configurado (padrão de 5 MiB, máximo de 20 MiB).
-- A API analisa o que está visível no diagrama. Detalhes de implementação, configuração e código não aparecem na análise, a menos que sejam informados em `context`.
-- A análise é um ponto de partida e não substitui uma modelagem de ameaças feita por especialistas, testes de segurança ou auditoria.
-- Cada requisição chama o modelo uma única vez, sem retentativas, com limite de 60 segundos. Falhas do Azure retornam 502 ou 504.
-- Não há autenticação, limitação de taxa nem persistência de resultados. Para uso fora de um ambiente controlado, coloque a API atrás de um gateway com essas proteções.
-- Os testes usam um cliente fake. A integração real com o Azure OpenAI não é exercitada na suíte automatizada.
+- 🎯 A qualidade da análise depende do modelo e da legibilidade do diagrama. O modelo pode errar, omitir ameaças ou inventar detalhes. A revisão humana é obrigatória.
+- 🖼️ Apenas PNG e JPEG são aceitos, com tamanho de 1 byte até o limite configurado (padrão de 5 MiB, máximo de 20 MiB).
+- 👁️ A API analisa o que está visível no diagrama. Detalhes de implementação, configuração e código não aparecem na análise, a menos que sejam informados em `context`.
+- 🧭 A análise é um ponto de partida e não substitui uma modelagem de ameaças feita por especialistas, testes de segurança ou auditoria.
+- ⏱️ Cada requisição chama o modelo uma única vez, sem retentativas, com limite de 60 segundos. Falhas do Azure retornam 502 ou 504.
+- 🚪 Não há autenticação, limitação de taxa nem persistência de resultados. Para uso fora de um ambiente controlado, coloque a API atrás de um gateway com essas proteções.
+- 🧪 Os testes usam um cliente fake. A integração real com o Azure OpenAI não é exercitada na suíte automatizada.
+
+---
+
+<div align="center">
+
+Feito com 🛡️ para estudo de **engenharia de prompt** e **segurança de aplicações**.
+
+</div>
