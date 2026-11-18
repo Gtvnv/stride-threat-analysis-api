@@ -1,0 +1,39 @@
+{
+  "components": [
+    "Navegador do usuario",
+    "API Web (HTTPS)",
+    "Banco de dados"
+  ],
+  "data_flows": [
+    "Navegador do usuario para API Web via HTTPS",
+    "API Web para Banco de dados via SQL"
+  ],
+  "trust_boundaries": [
+    "Fronteira entre o navegador do usuario e a API Web"
+  ],
+  "summary": "Arquitetura de tres camadas com navegador, API Web e banco de dados. A principal superficie de ataque e a fronteira entre o usuario e a API, alem do acesso da API ao banco.",
+  "threats": [
+    {
+      "category": "Spoofing",
+      "component": "API Web (HTTPS)",
+      "description": "Sem autenticacao visivel no diagrama, um atacante pode se passar por um usuario legitimo ao chamar a API.",
+      "severity": "High",
+      "mitigation": "Exigir autenticacao forte (por exemplo OAuth 2.0/OIDC) e validar tokens em todas as requisicoes."
+    },
+    {
+      "category": "Information Disclosure",
+      "component": "Banco de dados",
+      "description": "Dados sensiveis armazenados ou trafegados sem criptografia podem ser expostos em caso de acesso indevido.",
+      "severity": "High",
+      "mitigation": "Criptografar dados em repouso e em transito e aplicar o principio do menor privilegio na conta de acesso."
+    },
+    {
+      "category": "Denial of Service",
+      "component": "API Web (HTTPS)",
+      "description": "A API exposta a internet pode ser sobrecarregada por um volume alto de requisicoes.",
+      "severity": "Medium",
+      "mitigation": "Aplicar limitacao de taxa, filtros de borda e monitoramento de capacidade."
+    }
+  ],
+  "disclaimer": "Esta análise foi gerada por um modelo de linguagem e pode conter erros ou omissões. Ela exige revisão humana e deve ser usada apenas de forma ética e defensiva, em sistemas que você possui ou está autorizado a avaliar."
+}

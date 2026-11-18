@@ -1,0 +1,20 @@
+### Envia images/exemplo-arquitetura.png para análise STRIDE
+### Substitua <seu-host> pelo endereço onde a API está rodando (ex.: localhost:8000).
+POST http://<seu-host>/api/v1/analyze
+Content-Type: multipart/form-data; boundary=----stride
+
+------stride
+Content-Disposition: form-data; name="context"
+
+Aplicação web com frontend no navegador, API HTTPS e banco de dados relacional.
+------stride
+Content-Disposition: form-data; name="file"; filename="exemplo-arquitetura.png"
+Content-Type: image/png
+
+< ../images/exemplo-arquitetura.png
+------stride--
+
+### Equivalente com curl:
+### curl -X POST "http://<seu-host>/api/v1/analyze" \
+###   -F "file=@images/exemplo-arquitetura.png;type=image/png" \
+###   -F "context=Aplicação web com frontend no navegador, API HTTPS e banco de dados relacional."

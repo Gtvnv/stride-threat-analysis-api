@@ -1,0 +1,852 @@
+{
+  "pbtResults": {
+    "2.4 Escrever teste de propriedade para campos obrigatórios de `Threat`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795009205929
+    },
+    "2.5 Escrever teste de propriedade para enumerações exatas": {
+      "status": "passed",
+      "lastRunTimestamp": 1795009972015
+    },
+    "2.8 Escrever teste de propriedade para a interpretação de `Max_Image_Size`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795010033217
+    },
+    "4.3 Escrever teste de propriedade para o `Image_Validator`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795010035161
+    },
+    "2.6 Escrever teste de propriedade para o round trip do relatório": {
+      "status": "passed",
+      "lastRunTimestamp": 1795010688620
+    },
+    "5.3 Escrever teste de propriedade para a inclusão do contexto": {
+      "status": "passed",
+      "lastRunTimestamp": 1795010691177
+    }
+  },
+  "executionHistory": {
+    "1.1 Criar a estrutura de diretórios e os arquivos de configuração": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007221341
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007250708
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007384688
+      }
+    ],
+    "2.1 Criar os esquemas Pydantic em `app/schemas/threat.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007221967
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007407320
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008448904
+      }
+    ],
+    "2.2 Criar o tratamento de erros em `app/api/errors.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007223160
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007417476
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008454091
+      }
+    ],
+    "2.3 Criar `Settings` em `app/core/settings.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007224518
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008482133
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009669120
+      }
+    ],
+    "2.4 Escrever teste de propriedade para campos obrigatórios de `Threat`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007225127
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008486849
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009672789
+      }
+    ],
+    "2.5 Escrever teste de propriedade para enumerações exatas": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007225879
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009892017
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010206663
+      }
+    ],
+    "2.6 Escrever teste de propriedade para o round trip do relatório": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007226095
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010474805
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010715090
+      }
+    ],
+    "2.7 Escrever teste de propriedade para os limites do esquema": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007226353
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010852455
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010944362
+      }
+    ],
+    "2.8 Escrever teste de propriedade para a interpretação de `Max_Image_Size`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007226912
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009895828
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010211801
+      }
+    ],
+    "2.9 Escrever testes unitários de esquemas, erros e configuração": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007227619
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009899276
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010216841
+      }
+    ],
+    "3. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007227845
+      }
+    ],
+    "4.1 Criar o `Image_Validator` em `app/services/image_validator.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007228081
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008495773
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009676496
+      }
+    ],
+    "4.2 Criar o leitor de upload em streaming em `app/api/upload.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007228793
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008501445
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009680143
+      }
+    ],
+    "4.3 Escrever teste de propriedade para o `Image_Validator`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007229111
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009903141
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010221048
+      }
+    ],
+    "4.4 Escrever teste de propriedade para a leitura limitada em memória": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007229615
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010484117
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010719391
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012803568
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012961377
+      }
+    ],
+    "4.5 Escrever testes unitários do validador e do leitor": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007230319
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010487694
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010723286
+      }
+    ],
+    "5.1 Criar os módulos de prompt `app/prompts/system_prompt.py` e `app/prompts/few_shot.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007230679
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008507320
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009683762
+      }
+    ],
+    "5.2 Criar `app/prompts/prompt_builder.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007230937
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009907223
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010224989
+      }
+    ],
+    "5.3 Escrever teste de propriedade para a inclusão do contexto": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007231304
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010491402
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010727902
+      }
+    ],
+    "5.4 Escrever testes unitários do prompt": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007232159
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010746117
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010844838
+      }
+    ],
+    "6.1 Criar o `Protocol` e as exceções em `app/clients/model_client.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007232533
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010495144
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010738202
+      }
+    ],
+    "6.2 Criar `AzureOpenAIClient` em `app/clients/azure_openai_client.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007232862
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010856344
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010948616
+      }
+    ],
+    "6.3 Criar a infraestrutura de testes em `tests/conftest.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007233308
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010959399
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011625606
+      }
+    ],
+    "6.4 Escrever testes unitários do cliente Azure com SDK falso": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007233790
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010967441
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011629482
+      }
+    ],
+    "7.1 Criar o `Response_Validator` em `app/services/response_validator.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007234051
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009691825
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009886148
+      }
+    ],
+    "7.2 Criar o `Analysis_Service` em `app/services/analysis_service.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007234412
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010860337
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010952362
+      }
+    ],
+    "7.3 Escrever teste de propriedade para campos desconhecidos": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007234924
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010234177
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010468918
+      }
+    ],
+    "7.4 Escrever teste de propriedade para o `disclaimer`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007235530
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010750133
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010848894
+      }
+    ],
+    "7.5 Escrever testes unitários do validador de resposta e do serviço": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007236144
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011639242
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011740771
+      }
+    ],
+    "8. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007236606
+      }
+    ],
+    "9.1 Criar o logging em `app/core/logging.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007237251
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007437242
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008462113
+      }
+    ],
+    "9.2 Criar `app/api/routes.py` e `app/main.py`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007237701
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010963430
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011634908
+      }
+    ],
+    "9.3 Escrever teste de propriedade para saída inválida do modelo": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007238276
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011747139
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012393802
+      }
+    ],
+    "9.4 Escrever teste de propriedade para configuração incompleta": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007238745
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011750929
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012398653
+      }
+    ],
+    "9.5 Escrever os testes de API por cenário": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007239315
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011754541
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012402575
+      }
+    ],
+    "9.6 Escrever testes de segurança e da infraestrutura de testes": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007239679
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011758496
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012407048
+      }
+    ],
+    "10. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007239973
+      }
+    ],
+    "11.1 Criar `.github/workflows/ci.yml`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007240541
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008467215
+      }
+    ],
+    "11.2 Escrever testes de fumaça do repositório": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007241049
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012427116
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012798762
+      }
+    ],
+    "12.1 Criar o arquivo `LICENSE` na raiz": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007241340
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007474453
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795008472737
+      }
+    ],
+    "12.2 Criar a imagem de exemplo e os arquivos de `examples/`": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007241793
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009695769
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795009882179
+      }
+    ],
+    "12.3 Criar os quatro arquivos em `docs/`, em pt-BR": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007242409
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011762289
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012411487
+      }
+    ],
+    "12.4 Criar o `README.md` em pt-BR": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007243068
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012965696
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795013049655
+      }
+    ],
+    "12.5 Escrever testes de fumaça da documentação": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007243290
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795013053838
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795013626231
+      }
+    ],
+    "13. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007243496
+      }
+    ],
+    "14.1 Verificar o repositório antes do commit": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007243814
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795013634662
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795014050633
+      }
+    ],
+    "14.2 Criar o commit e publicar": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007244190
+      },
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795014295312
+      }
+    ],
+    "1. Criar a estrutura do projeto": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795007385955
+      }
+    ],
+    "4. Implementar validação de imagem e leitor de upload": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010723919
+      }
+    ],
+    "5. Implementar a engenharia de prompt": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010845301
+      }
+    ],
+    "2. Implementar esquemas, erros e configuração": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795010944662
+      }
+    ],
+    "6. Implementar o cliente do modelo": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011630176
+      }
+    ],
+    "7. Implementar validação da resposta e serviço de análise": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795011741116
+      }
+    ],
+    "9. Implementar a camada HTTP e ligar os componentes": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012407300
+      }
+    ],
+    "11. Configurar a integração contínua": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795012799601
+      }
+    ],
+    "12. Criar documentação, exemplos, imagens e licença": [
+      {
+        "executionId": "e35f6e58-f313-42e9-8481-c2742362ea3c",
+        "chatSessionId": "sess_d5c88176-c613-4bcc-b689-40fa0b84834b",
+        "timestamp": 1795013626488
+      }
+    ]
+  }
+}
